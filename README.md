@@ -10,7 +10,7 @@ I'm focused on building real-world skills through hands-on development, with str
 ## Skills and Technologies
 
 **Languages & Tools**  
-Java · Python · C++ · C# · JavaScript · HTML5/CSS3 · SQL · Bash
+Java · Python · C++ · C# · C ·JavaScript · HTML5/CSS3 · SQL · Bash
 
 **Frameworks & Environments**  
 .NET · ASP.NET Core · Agile · Git · Visual Studio · Jira
@@ -36,7 +36,6 @@ Operating Systems · Server-Side Web Architecture · Software Engineering I & II
 - **CS 3620**: Server-Side Web Architecture
 - **CS 4760**: Capstone – ASP.NET Core Web App
 - **CS 4890**: Cooperative Work Experience (Internship)
-- **CS 3100**: Operating Systems (retaking)
 - **CS 4899**: Bachelor's Degree Assessment
 
 ---
