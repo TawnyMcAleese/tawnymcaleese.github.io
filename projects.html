@@ -3,71 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tawny McAleese | Developer Portfolio</title>
+  <title>Projects | Tawny McAleese</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #24292e;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    .project-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      border-radius: 1rem;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .project-icon {
+      font-size: 1.2rem;
+      margin-right: 5px;
+    }
+    .tech-badge {
+      background-color: #e7f1ff;
+      color: #084298;
+      border-radius: 0.5rem;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.75rem;
+      margin: 2px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Tawny McAleese</h1>
-    <p>Computer Science Student · Veteran · Web Developer</p>
+    <h1>Projects by Tawny McAleese</h1>
+    <p>Real-world applications, REST APIs, dynamic forms, scripting, and more.</p>
   </header>
 
-  <section class="container">
-    <h2>About Me</h2>
-    <p>I'm a senior Computer Science student at <strong>Weber State University</strong>, graduating in <strong>August 2025</strong>. I'm currently an IT Intern for the State of Utah’s Department of Technology Services, acting as a project coordinator and main contact for internal IT service requests.</p>
-    <p>I focus on building real-world skills through hands-on development, and I'm especially passionate about web architecture, scripting, databases, and scalable systems.</p>
-  </section>
+  <main class="container my-5">
+    <div class="row g-4">
+      <!-- RV Park Reservation System -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">RV Park Reservation System</h5>
+            <p class="card-text small">Full-stack reservation system with dynamic fee logic, triggered transactions, Stripe checkout, and admin tools.</p>
+            <div class="mb-2">
+              <span class="tech-badge">ASP.NET Core</span>
+              <span class="tech-badge">Razor Pages</span>
+              <span class="tech-badge">EF Core</span>
+              <span class="tech-badge">Stripe API</span>
+            </div>
+            <pre><code>// Apply triggered transactions
+var fees = _transactionService.ApplyTriggeredTransactionsAsync(res, baseAmount, nights);</code></pre>
+          </div>
+        </div>
+      </div>
 
-  <section class="container">
-    <h2>Skills and Technologies</h2>
-    <p><strong>Languages & Tools:</strong> Java · Python · C++ · C# · C · JavaScript · HTML5/CSS3 · SQL · Bash</p>
-    <p><strong>Frameworks & Environments:</strong> .NET · ASP.NET Core · Agile · Git · Visual Studio · Jira</p>
-    <p><strong>Coursework & Concepts:</strong> Operating Systems · Server-Side Web Architecture · Software Engineering I & II · Formal Languages & Algorithms · Capstone: ASP.NET · Advanced SQL · Object-Oriented Programming · Web UI/UX Design · Computer Architecture</p>
-  </section>
+      <!-- Mad World -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Mad World: Mad Lib Generator</h5>
+            <p class="card-text small">Django site with over 17 creative stories. Each form generates puns and fun narratives from user input.</p>
+            <div class="mb-2">
+              <span class="tech-badge">Django</span>
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">HTML/CSS</span>
+            </div>
+            <pre><code># Story model
+class FoodStory(models.Model):
+  adjective = models.CharField(max_length=50)
 
-  <section class="container">
-    <h2>Highlights</h2>
-    <ul>
-      <li>Built .NET prototypes using Agile collaboration and iterative testing.</li>
-      <li>Developed SQL databases with triggers, stored procedures, and complex queries.</li>
-      <li>Created and deployed responsive web pages using modern JavaScript frameworks.</li>
-      <li>Completed team-based development on an ASP.NET Core Capstone Project.</li>
-      <li>Worked hands-on with Intel assembler programming and system-level architecture.</li>
-      <li>Managed client-facing IT tickets and coordinated deliverables using Jira as an intern.</li>
-    </ul>
-  </section>
+# Output: "The soup was so {{ adjective }} it ran away!"</code></pre>
+          </div>
+        </div>
+      </div>
 
-  <section class="container">
-    <h2>Currently In Progress (Summer 2025)</h2>
-    <ul>
-      <li>CS 3030: Scripting Languages (Bash, Python)</li>
-      <li>CS 3620: Server-Side Web Architecture</li>
-      <li>CS 4760: Capstone – ASP.NET Core Web App</li>
-      <li>CS 4890: Cooperative Work Experience (Internship)</li>
-      <li>CS 4899: Bachelor's Degree Assessment</li>
-    </ul>
-  </section>
+      <!-- Book API -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Book API</h5>
+            <p class="card-text small">RESTful Django API to organize and filter books by category and rating. Used DRF with pagination and search support.</p>
+            <div class="mb-2">
+              <span class="tech-badge">DRF</span>
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">SQLite</span>
+            </div>
+            <pre><code># Filter by genre and rating
+queryset = BookData.objects.filter(category='Sci-Fi', rating__gte=4)</code></pre>
+          </div>
+        </div>
+      </div>
 
-  <section class="container">
-    <h2>Military & Leadership Background</h2>
-    <ul>
-      <li>U.S. Air Force Veteran (2014–2021) – AFSC 2A571</li>
-      <li>Leadership School Graduate, Six Sigma trained</li>
-      <li>Former Resilience Instructor & Victim Advocate</li>
-    </ul>
-  </section>
+      <!-- Bash File Renamer -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Bash File Renamer</h5>
+            <p class="card-text small">Scripting challenge project to bulk rename files using pattern matching and regular expressions in Bash.</p>
+            <div class="mb-2">
+              <span class="tech-badge">Bash</span>
+              <span class="tech-badge">Linux CLI</span>
+              <span class="tech-badge">Regex</span>
+            </div>
+            <pre><code>for file in *.txt; do
+  mv "$file" "${file// /_}"
+done</code></pre>
+          </div>
+        </div>
+      </div>
 
-  <section class="container">
-    <h2>Connect</h2>
-    <p>Email: <a href="mailto:tawnymcaleese@gmail.com">tawnymcaleese@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/tawny-mcaleese" target="_blank">linkedin.com/in/tawny-mcaleese</a></p>
-  </section>
+      <!-- JSON Rule Builder Demo -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Dynamic Rule Builder</h5>
+            <p class="card-text small">Built UI-driven JSON rule generator to define business logic for fees. Translates user input to logic config.</p>
+            <div class="mb-2">
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">JSON</span>
+              <span class="tech-badge">DOM</span>
+            </div>
+            <pre><code>// JSON output
+{
+  "Field": "Guests",
+  "BaseIncluded": 2,
+  "PerUnit": true
+}</code></pre>
+          </div>
+        </div>
+      </div>
 
-  <footer>
-    <p>© 2025 Tawny McAleese. Built with Bootstrap & GitHub Pages.</p>
-  </footer>
+      <!-- Admin UI Modal Control -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Admin Modal UI</h5>
+            <p class="card-text small">Built modal editor that lets admins define field notes, trigger events, and max/default limits.</p>
+            <div class="mb-2">
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">Bootstrap</span>
+              <span class="tech-badge">.NET Razor</span>
+            </div>
+            <pre><code>// Note save logic
+field.Note = note;
+field.MaxValue = max;
+field.NoteTrigger = trigger;</code></pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
 </body>
 </html>
