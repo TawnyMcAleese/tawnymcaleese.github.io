@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Walkthrough – Tawny McAleese</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', sans-serif;
+            color: #333;
+        }
+
+        header {
+            background-color: #24292e;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .section-title {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 0.5rem;
+        }
+
+        pre {
+            background-color: #212529;
+            color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            overflow-x: auto;
+        }
+
+        .project-section {
+            margin-bottom: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Code Walkthrough</h1>
+        <p>Highlights from Tawny McAleese's Projects</p>
+    </header>
+
+    <main class="container">
+        <section class="project-section">
+            <h2 class="section-title">RV Park Reservation System</h2>
+            <p>This ASP.NET Core project includes full reservation lifecycle logic with dynamic transaction evaluation. One of the most complex parts is the dynamic fee system based on JSON rules.</p>
+            <pre><code>// Apply triggered transactions based on custom rules
+var transactions = _transactionService.ApplyTriggeredTransactionsAsync(reservation, baseAmount, numberOfNights);
+
+// Cancellation fee evaluation
+if (rule.Type == TriggerType.Triggered && rule.Name.ToLower().Contains("cancel"))
+{
+    // Only apply highest valid rule
+    var bestRule = rules.Where(r => r.Evaluate(reservation)).OrderByDescending(r => r.Value).FirstOrDefault();
+}</code></pre>
+        </section>
+
+        <section class="project-section">
+            <h2 class="section-title">Mad World: Mad Lib Generator</h2>
+            <p>Fun and interactive Django project with over 17 dynamic forms and pun-filled templates. Each story uses its own model and rendering logic.</p>
+            <pre><code># Example Mad Lib model
+class FoodStory3(models.Model):
+    adjective = models.CharField(max_length=50)
+    noun = models.CharField(max_length=50)
+
+# Template rendering result
+"""
+The spaghetti was so {{ adjective }} it {{ noun }}ed off the plate!
+"""
+</code></pre>
+        </section>
+
+        <section class="project-section">
+            <h2 class="section-title">Book API with Category Filters</h2>
+            <p>A Django REST API with clean category viewsets, rating filters, and search support. Used for a server-side architecture course.</p>
+            <pre><code># Category viewset example
+class FantasyBooksViewSet(viewsets.ModelViewSet):
+    queryset = BookData.objects.filter(category='Fantasy')
+    serializer_class = BookSerializer
+</code></pre>
+        </section>
+
+        <section class="project-section">
+            <h2 class="section-title">Dynamic Fee Engine</h2>
+            <p>This engine powers dynamic fee evaluation using JSON-defined rules. It supports conditions like base-included logic, per-unit, and percent-of-balance calculations.</p>
+            <pre><code>// Rule evaluation logic (TriggerRuleEvaluator.cs)
+if (rule.PerUnit)
+{
+    units = Math.Max(0, actual - rule.BaseIncluded);
+    amount = units * rule.PerUnitAmount;
+}
+</code></pre>
+        </section>
+
+        <section class="project-section">
+            <h2 class="section-title">Admin Dynamic Field Editor</h2>
+            <p>Admins can define default values, help notes, and modal triggers for custom dynamic form fields. Fields affect pricing and UI modals dynamically.</p>
+            <pre><code>// Save field configuration
+field.Note = note;
+field.NoteTrigger = noteTrigger;
+field.DefaultValue = defaultValue;
+field.MaxValue = maxValue;
+await _unitOfWork.CommitAsync();
+</code></pre>
+        </section>
+
+        <section class="project-section">
+            <h2 class="section-title">Transaction Type Upsert Page</h2>
+            <p>A dynamic form and rule builder for admins to create and preview JSON logic that defines transaction behavior.</p>
+            <pre><code>// Sample rule JSON output
+{
+  "Field": "NumberOfAdults",
+  "BaseIncluded": 2,
+  "PerUnit": true,
+  "Value": 0
+}
+</code></pre>
+        </section>
+    </main>
+</body>
+</html>
