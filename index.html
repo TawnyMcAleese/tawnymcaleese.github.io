@@ -1,61 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tawny McAleese | Portfolio</title>
-  <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tawny McAleese – Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add in your <head> if not already there -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 1rem;
+        }
+
+            .project-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            }
+
+        .project-icon {
+            font-size: 1.2rem;
+            margin-right: 5px;
+        }
+
+        .tech-badge {
+            background-color: #f1f1f1;
+            border-radius: 0.5rem;
+            padding: 0.25rem 0.6rem;
+            font-size: 0.75rem;
+            margin: 2px;
+        }
+    </style>
+
+    <section class="container my-5">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">🌟 My Featured Projects</h2>
+            <p class="text-muted">Hands-on builds using modern tech, full-stack skills, and real-world logic.</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Project Card Example -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card project-card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">RV Park Reservation System</h5>
+                        <p class="card-text small">Full-stack app for reservations, dynamic fee rules, and role-based management. Includes Stripe checkout and admin tools.</p>
+                        <div class="mb-2">
+                            <span class="tech-badge">ASP.NET Core</span>
+                            <span class="tech-badge">Razor Pages</span>
+                            <span class="tech-badge">EF Core</span>
+                            <span class="tech-badge">Stripe API</span>
+                        </div>
+                        <a href="https://github.com/TawnyMcAleese/RVParkTeamRed" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
+                            <i class="bi bi-github project-icon"></i>View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat below for each project -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card project-card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Mad World: Mad Lib Generator</h5>
+                        <p class="card-text small">Django app with 17+ pun-packed stories using dynamic forms and topic-based templates (food, funny, family, pop culture).</p>
+                        <div class="mb-2">
+                            <span class="tech-badge">Django</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">HTML/CSS</span>
+                            <span class="tech-badge">Bootstrap</span>
+                        </div>
+                        <a href="https://github.com/TawnyMcAleese/madworld" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
+                            <i class="bi bi-github project-icon"></i>View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card project-card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Book API with Category Filters</h5>
+                        <p class="card-text small">RESTful Django API for book browsing with category viewsets, rating filters, and pagination for frontend integration.</p>
+                        <div class="mb-2">
+                            <span class="tech-badge">DRF</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">REST API</span>
+                            <span class="tech-badge">SQLite</span>
+                        </div>
+                        <a href="https://github.com/TawnyMcAleese/CS3620_BookAPI" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
+                            <i class="bi bi-github project-icon"></i>View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>Tawny McAleese</h1>
-      <p>Computer Science Student · Full-Stack Developer · USAF Veteran</p>
-      <nav>
-        <a href="https://github.com/TawnyMcAleese" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/tawny-mcaleese/" target="_blank">LinkedIn</a>
-        <a href="/resume.pdf" target="_blank">Resume</a>
-      </nav>
-    </div>
+    <h1>Tawny McAleese</h1>
+    <p>Computer Science Student · Veteran · Web Developer</p>
   </header>
 
-  <main class="container">
-    <section>
-      <h2>Featured Projects</h2>
+  <section>
+    <h2>About Me</h2>
+    <p>I’m a senior CS student at Weber State, focused on web architecture, databases, and scalable systems.</p>
+  </section>
 
-      <div class="project">
-        <h3>RV Park Management System</h3>
-        <p>
-          A full-stack ASP.NET Core application for handling reservations, guests, and financial reports.
-          Developed complete admin interface, integrated Stripe payments, and created PDF/Excel exportable reports.
-        </p>
-        <a href="https://github.com/TawnyMcAleese/RVPark" target="_blank">View on GitHub</a>
-      </div>
+  <section>
+    <h2>Projects</h2>
+    <ul>
+      <li><a href="https://github.com/TawnyMcAleese/RVParkTeamRed">RV Park Reservation System</a> – ASP.NET Core, dynamic fee logic, admin tools</li>
+      <li><a href="https://github.com/TawnyMcAleese/CS3620_BookAPI">Book API Project</a> – Django REST Framework with category filters</li>
+      <li><a href="https://github.com/TawnyMcAleese/madworld">Mad Lib Generator</a> – Django project with dynamic forms and funny templates</li>
+    </ul>
+  </section>
 
-      <div class="project">
-        <h3>Capstone: Food Delivery Dashboard</h3>
-        <p>
-          A scalable .NET-based web application allowing users to order food, apply discounts, and track orders.
-          Built using Razor Pages, SQL Server, and responsive web design.
-        </p>
-        <a href="https://github.com/TawnyMcAleese/FoodDeliveryCapstone" target="_blank">View on GitHub</a>
-      </div>
-
-      <div class="project">
-        <h3>Advanced SQL Projects</h3>
-        <p>
-          Designed normalized relational databases with complex joins, subqueries, and stored procedures.
-          Automated business logic through triggers and integrated analytic queries.
-        </p>
-        <a href="https://github.com/TawnyMcAleese/SQLProjects" target="_blank">View on GitHub</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Tawny McAleese</p>
-    </div>
-  </footer>
+  <section>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:tawnymcaleese@gmail.com">tawnymcaleese@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/tawny-mcaleese">linkedin.com/in/tawny-mcaleese</a></p>
+  </section>
 </body>
 </html>
